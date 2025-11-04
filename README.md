@@ -50,7 +50,30 @@ See `django-template/README.md` for detailed usage instructions.
 
 ---
 
-*More templates coming soon! Check back for React, FastAPI, Node/Express, and other frameworks.*
+### React + Vite + TypeScript Template
+
+**Location**: `react-template/`
+
+A modern React development template featuring:
+- Vite 6 for lightning-fast dev server and optimized builds
+- React 18 with TypeScript 5 for type-safe development
+- TanStack Query (React Query) for powerful data fetching and caching
+- Zustand for lightweight, flexible state management
+- Vitest + React Testing Library for comprehensive testing
+- ESLint + Prettier for code quality and consistent formatting
+- 12 custom slash commands (/dev, /build, /test, /lint, /create-component, etc.)
+- 6 specialized agents (security, performance, testing, React expert, Query expert, accessibility)
+- 3 skills for custom hooks, component patterns, and data fetching patterns
+- Complete TypeScript configurations and build tooling
+- Comprehensive documentation and setup instructions
+
+**Best For**: Modern React SPAs, React + REST API projects, TypeScript-first applications
+
+See `react-template/README.md` for detailed usage instructions.
+
+---
+
+*More templates coming soon! Check back for FastAPI, Node/Express, Vue.js, Next.js, and other frameworks.*
 
 ## Template Structure
 
