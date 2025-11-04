@@ -1,0 +1,10 @@
+{
+  "model": "sonnet",
+  "permissions": {
+    "allow": ["*"],
+    "ask": [],
+    "deny": [".env", "*.key", "*.pem", "secrets.*"]
+  },
+  "outputStyle": "markdown",
+  "cleanupPeriodDays": 30
+}
