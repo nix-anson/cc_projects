@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: streamlit_db
+    environment:
+      POSTGRES_USER: streamlit
+      POSTGRES_PASSWORD: streamlit_dev_password
+      POSTGRES_DB: streamlit_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U streamlit"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: streamlit_app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8501:8501"
+    environment:
+      - DATABASE_URL=postgresql://streamlit:streamlit_dev_password@postgres:5432/streamlit_db
+    volumes:
+      - .:/app
+      - /app/.venv
+    command: >
+      sh -c "
+        alembic upgrade head &&
+        streamlit run main.py
+          --server.port=8501
+          --server.address=0.0.0.0
+          --server.enableCORS=false
+          --server.enableXsrfProtection=true
+      "
+
+volumes:
+  postgres_data:

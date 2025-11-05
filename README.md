@@ -125,6 +125,32 @@ See `tkinter-template/README.md` for detailed usage instructions.
 
 ---
 
+### Streamlit Data Application Template
+
+**Location**: `streamlit-template/`
+
+A production-ready Streamlit application template featuring:
+- Streamlit 1.51.0+ with modern Python 3.13.9+ for interactive data applications
+- SQLAlchemy ORM with Alembic migrations for database management
+- streamlit-authenticator for user authentication and session management
+- httpx for async API integration with retry logic and error handling
+- Plotly and Altair for interactive data visualizations
+- Pytest with Streamlit AppTest for comprehensive component testing
+- Code quality tools: Ruff (linting/formatting), Black, isort, mypy
+- Pre-commit hooks for automated code quality checks
+- Docker and docker-compose for development and production deployment
+- 12 custom slash commands (/run, /test, /lint, /create-page, /create-component, etc.)
+- 6 specialized agents (Streamlit expert, data viz optimizer, security reviewer, database architect, test generator, API integrator)
+- 4 skills for Streamlit patterns, caching optimization, authentication systems, and database operations
+- Complete example implementation with multi-page app structure
+- Comprehensive configuration templates for secrets, environment variables, and deployment
+
+**Best For**: Data dashboards, ML model interfaces, analytics applications, interactive data tools
+
+See `streamlit-template/README.md` for detailed usage instructions.
+
+---
+
 *More templates coming soon! Check back for FastAPI, Node/Express, Vue.js, Next.js, and other frameworks.*
 
 ## Template Structure
