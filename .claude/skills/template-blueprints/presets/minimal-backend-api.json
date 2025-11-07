@@ -1,0 +1,101 @@
+{
+  "preset_name": "minimal-backend-api",
+  "description": "Minimal REST API backend starter template",
+  "template_type": "backend-api",
+  "depth": "minimal",
+  "recommended_frameworks": [
+    "FastAPI",
+    "Flask",
+    "Express"
+  ],
+  "commands": [
+    {
+      "name": "dev",
+      "description": "Run development server with hot-reload",
+      "priority": "essential"
+    },
+    {
+      "name": "test",
+      "description": "Run test suite",
+      "priority": "essential"
+    },
+    {
+      "name": "lint",
+      "description": "Check code quality",
+      "priority": "essential"
+    },
+    {
+      "name": "format",
+      "description": "Auto-format code",
+      "priority": "essential"
+    },
+    {
+      "name": "create-route",
+      "description": "Generate new API route/endpoint",
+      "priority": "essential"
+    }
+  ],
+  "agents": [
+    {
+      "name": "security",
+      "role": "Review code for security vulnerabilities",
+      "priority": "required"
+    },
+    {
+      "name": "api-expert",
+      "role": "Framework-specific API best practices",
+      "priority": "required"
+    },
+    {
+      "name": "test-generator",
+      "role": "Generate comprehensive tests",
+      "priority": "required"
+    }
+  ],
+  "skills": [
+    {
+      "name": "api-patterns",
+      "description": "Common REST API design patterns"
+    }
+  ],
+  "features": {
+    "database": true,
+    "auth": false,
+    "real_time": false,
+    "file_uploads": false,
+    "background_jobs": false,
+    "caching": false
+  },
+  "suggested_dependencies": {
+    "python": [
+      "Framework (fastapi/flask)",
+      "Web server (uvicorn/gunicorn)",
+      "ORM (sqlalchemy)",
+      "Database driver (psycopg2/pymongo)",
+      "Testing (pytest)",
+      "Linting (ruff)",
+      "Type checking (mypy)"
+    ],
+    "javascript": [
+      "Framework (express)",
+      "Database client (pg/mongodb)",
+      "Testing (jest)",
+      "Linting (eslint)",
+      "Type checking (typescript)"
+    ]
+  },
+  "estimated_files": {
+    "commands": 5,
+    "agents": 3,
+    "skills": 1,
+    "total_config_files": "~15"
+  },
+  "complexity": "low",
+  "setup_time": "15-30 minutes",
+  "ideal_for": [
+    "Learning API development",
+    "Microservices",
+    "Simple backends",
+    "Prototypes"
+  ]
+}

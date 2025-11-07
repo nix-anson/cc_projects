@@ -1,0 +1,106 @@
+{
+  "preset_name": "minimal-desktop-gui",
+  "description": "Minimal desktop GUI application starter",
+  "template_type": "desktop-gui",
+  "depth": "minimal",
+  "recommended_frameworks": [
+    "Tkinter",
+    "Electron",
+    "Qt (PyQt/PySide)"
+  ],
+  "commands": [
+    {
+      "name": "dev",
+      "description": "Run application in development mode",
+      "priority": "essential"
+    },
+    {
+      "name": "test",
+      "description": "Run test suite",
+      "priority": "essential"
+    },
+    {
+      "name": "lint",
+      "description": "Check code quality",
+      "priority": "essential"
+    },
+    {
+      "name": "format",
+      "description": "Auto-format code",
+      "priority": "essential"
+    },
+    {
+      "name": "build",
+      "description": "Create executable/installer",
+      "priority": "essential"
+    },
+    {
+      "name": "new-window",
+      "description": "Generate new window/view",
+      "priority": "essential"
+    }
+  ],
+  "agents": [
+    {
+      "name": "gui-security",
+      "role": "Review for input validation and security issues",
+      "priority": "required"
+    },
+    {
+      "name": "gui-expert",
+      "role": "GUI framework best practices",
+      "priority": "required"
+    },
+    {
+      "name": "test-helper",
+      "role": "Generate GUI tests",
+      "priority": "required"
+    }
+  ],
+  "skills": [
+    {
+      "name": "gui-patterns",
+      "description": "Common GUI design patterns (MVC, MVVM)"
+    }
+  ],
+  "features": {
+    "database": false,
+    "file_operations": true,
+    "multi_threading": true,
+    "settings_persistence": true,
+    "auto_updates": false
+  },
+  "suggested_dependencies": {
+    "python_tkinter": [
+      "Python 3.10+",
+      "ttkbootstrap (modern themes)",
+      "Pillow (image handling)",
+      "pytest",
+      "PyInstaller (packaging)",
+      "mypy",
+      "ruff"
+    ],
+    "electron": [
+      "Electron",
+      "React/Vue",
+      "TypeScript",
+      "electron-builder",
+      "Jest",
+      "ESLint"
+    ]
+  },
+  "estimated_files": {
+    "commands": 6,
+    "agents": 3,
+    "skills": 1,
+    "total_config_files": "~16"
+  },
+  "complexity": "low-medium",
+  "setup_time": "20-40 minutes",
+  "ideal_for": [
+    "Desktop utilities",
+    "Business tools",
+    "Cross-platform apps",
+    "Internal tools"
+  ]
+}

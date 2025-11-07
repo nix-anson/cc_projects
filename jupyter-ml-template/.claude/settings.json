@@ -1,0 +1,37 @@
+{
+  "model": "sonnet",
+  "env": {
+    "PYTHONPATH": "${workspaceFolder}/src"
+  },
+  "permissions": {
+    "allow": [
+      "*"
+    ],
+    "ask": [],
+    "deny": [
+      ".env",
+      "*.key",
+      "*.pem",
+      "secrets.*",
+      "credentials.*",
+      "data/raw/*",
+      "data/processed/*",
+      "models/saved_models/*",
+      "models/checkpoints/*"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo $FILE | grep -E '\\.py$'; then ruff format $FILE 2>/dev/null || true; fi"
+          }
+        ]
+      }
+    ]
+  },
+  "outputStyle": "markdown"
+}

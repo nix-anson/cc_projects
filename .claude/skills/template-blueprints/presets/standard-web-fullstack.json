@@ -1,0 +1,168 @@
+{
+  "preset_name": "standard-web-fullstack",
+  "description": "Complete full-stack web application template",
+  "template_type": "fullstack",
+  "depth": "standard",
+  "recommended_frameworks": [
+    "Django + React",
+    "FastAPI + Next.js",
+    "Express + React"
+  ],
+  "commands": [
+    {
+      "name": "dev",
+      "description": "Run development server",
+      "priority": "essential"
+    },
+    {
+      "name": "test",
+      "description": "Run test suite",
+      "priority": "essential"
+    },
+    {
+      "name": "lint",
+      "description": "Check code quality",
+      "priority": "essential"
+    },
+    {
+      "name": "format",
+      "description": "Auto-format code",
+      "priority": "essential"
+    },
+    {
+      "name": "type-check",
+      "description": "Run type checker",
+      "priority": "essential"
+    },
+    {
+      "name": "build",
+      "description": "Build for production",
+      "priority": "essential"
+    },
+    {
+      "name": "db-migrate",
+      "description": "Create database migrations",
+      "priority": "standard"
+    },
+    {
+      "name": "db-upgrade",
+      "description": "Apply database migrations",
+      "priority": "standard"
+    },
+    {
+      "name": "create-model",
+      "description": "Generate new data model",
+      "priority": "standard"
+    },
+    {
+      "name": "create-component",
+      "description": "Generate new frontend component",
+      "priority": "standard"
+    },
+    {
+      "name": "create-route",
+      "description": "Generate new API route",
+      "priority": "standard"
+    },
+    {
+      "name": "deploy",
+      "description": "Deploy to production",
+      "priority": "standard"
+    }
+  ],
+  "agents": [
+    {
+      "name": "security",
+      "role": "Comprehensive security review for full-stack apps",
+      "priority": "required"
+    },
+    {
+      "name": "backend-expert",
+      "role": "Backend framework best practices",
+      "priority": "required"
+    },
+    {
+      "name": "frontend-expert",
+      "role": "Frontend framework best practices",
+      "priority": "required"
+    },
+    {
+      "name": "test-generator",
+      "role": "Generate tests for both frontend and backend",
+      "priority": "required"
+    },
+    {
+      "name": "api-optimizer",
+      "role": "Optimize API performance and design",
+      "priority": "required"
+    },
+    {
+      "name": "database-architect",
+      "role": "Database schema design and optimization",
+      "priority": "required"
+    }
+  ],
+  "skills": [
+    {
+      "name": "backend-patterns",
+      "description": "Backend architectural patterns"
+    },
+    {
+      "name": "frontend-patterns",
+      "description": "Frontend component patterns"
+    },
+    {
+      "name": "api-generator",
+      "description": "Generate RESTful API endpoints"
+    },
+    {
+      "name": "auth-system",
+      "description": "Authentication and authorization patterns"
+    }
+  ],
+  "features": {
+    "database": true,
+    "auth": true,
+    "real_time": false,
+    "file_uploads": true,
+    "background_jobs": true,
+    "caching": true,
+    "api_docs": true,
+    "admin_panel": true
+  },
+  "suggested_dependencies": {
+    "django_react": [
+      "Django 5.x",
+      "Django REST Framework",
+      "React 18",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "pytest",
+      "Vitest"
+    ],
+    "fastapi_nextjs": [
+      "FastAPI 0.115+",
+      "Next.js 14",
+      "SQLAlchemy 2.0",
+      "PostgreSQL",
+      "Redis",
+      "pytest",
+      "Vitest"
+    ]
+  },
+  "estimated_files": {
+    "commands": 12,
+    "agents": 6,
+    "skills": 4,
+    "total_config_files": "~45"
+  },
+  "complexity": "medium-high",
+  "setup_time": "1-2 hours",
+  "ideal_for": [
+    "Production web applications",
+    "SaaS products",
+    "E-commerce platforms",
+    "Content management systems"
+  ]
+}

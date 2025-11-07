@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "description": "Templatable command patterns extracted from existing templates",
+    "usage": "Replace {FRAMEWORK}, {COMMAND}, {PORT}, etc. with actual values",
+    "version": "1.0"
+  },
+  "commands": {
+    "dev_server": {
+      "names": ["dev", "run", "runserver", "serve"],
+      "template": {
+        "frontmatter": {
+          "description": "Run {FRAMEWORK} development server with hot-reload",
+          "argument-hint": "[--port PORT] [--host HOST]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Start the {FRAMEWORK} development server with hot-reload enabled.\n\nArguments:\n- $1: Port number (optional, defaults to {DEFAULT_PORT})\n- $2: Host address (optional, defaults to localhost)\n\nUsage:\n- `/{COMMAND}` - Start on default port ({DEFAULT_PORT})\n- `/{COMMAND} 8080` - Start on custom port\n- `/{COMMAND} 8080 0.0.0.0` - Start on custom port and host\n\nThis will:\n1. Check if port is available\n2. Start development server with hot-reload\n3. Display access URL\n4. Watch for file changes\n\nPress Ctrl+C to stop the server."
+      },
+      "examples": {
+        "django": "/{COMMAND}",
+        "react": "/{COMMAND}",
+        "flask": "/{COMMAND} [--port PORT] [--host HOST]",
+        "streamlit": "/{COMMAND} [page_name]"
+      }
+    },
+    "test": {
+      "names": ["test", "test-watch", "coverage"],
+      "template": {
+        "frontmatter": {
+          "description": "Run {FRAMEWORK} test suite",
+          "argument-hint": "[test_path] [--watch] [--coverage]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Execute the {FRAMEWORK} test suite using {TEST_FRAMEWORK}.\n\nArguments:\n- $1: Specific test file/directory/pattern (optional, runs all tests if not specified)\n- $2: Additional flags like --watch, --coverage, --verbose\n\nUsage:\n- `/{COMMAND}` - Run all tests\n- `/{COMMAND} {TEST_PATH_EXAMPLE}` - Run specific tests\n- `/{COMMAND} --coverage` - Run tests with coverage report\n- `/{COMMAND} --watch` - Run tests in watch mode\n\nThis will:\n1. Discover and run tests\n2. Display results with pass/fail status\n3. Show coverage report (if --coverage flag used)\n4. Exit with appropriate status code\n\nTest files should be named {TEST_FILE_PATTERN}."
+      },
+      "examples": {
+        "django": "/{COMMAND} [app_name.tests.TestClass.test_method]",
+        "react": "/{COMMAND}",
+        "flask": "/{COMMAND} [test_pattern]",
+        "python_generic": "/{COMMAND} tests/test_example.py"
+      }
+    },
+    "lint": {
+      "names": ["lint", "lint-fix", "check"],
+      "template": {
+        "frontmatter": {
+          "description": "Run {LINTER} to check code quality",
+          "argument-hint": "[--fix] [path]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Check code quality using {LINTER}.\n\nArguments:\n- $1: Specific path to lint (optional, lints all code if not specified)\n- --fix: Automatically fix issues where possible\n\nUsage:\n- `/{COMMAND}` - Check all code\n- `/{COMMAND} {PATH_EXAMPLE}` - Check specific path\n- `/{COMMAND} --fix` - Check and auto-fix issues\n\nThis will:\n1. Scan code for style violations\n2. Report issues with file locations\n3. Auto-fix fixable issues (if --fix used)\n4. Exit with non-zero code if issues found\n\nConfiguration: {LINTER_CONFIG_FILE}"
+      },
+      "examples": {
+        "python_black": "/{COMMAND} (uses black)",
+        "python_ruff": "/{COMMAND} (uses ruff check)",
+        "javascript": "/{COMMAND} (uses eslint)"
+      }
+    },
+    "format": {
+      "names": ["format", "fmt"],
+      "template": {
+        "frontmatter": {
+          "description": "Auto-format code with {FORMATTER}",
+          "argument-hint": "[path]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Automatically format code using {FORMATTER}.\n\nArguments:\n- $1: Specific path to format (optional, formats all code if not specified)\n\nUsage:\n- `/{COMMAND}` - Format all code\n- `/{COMMAND} {PATH_EXAMPLE}` - Format specific path\n\nThis will:\n1. Format code according to style guide\n2. Update files in-place\n3. Report which files were modified\n\nConfiguration: {FORMATTER_CONFIG_FILE}\n\nNote: This command modifies files directly."
+      },
+      "examples": {
+        "python": "/{COMMAND} (uses black/ruff format)",
+        "javascript": "/{COMMAND} (uses prettier)"
+      }
+    },
+    "type_check": {
+      "names": ["type-check", "typecheck", "types"],
+      "template": {
+        "frontmatter": {
+          "description": "Run {TYPE_CHECKER} for static type checking",
+          "argument-hint": "[path]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Perform static type checking using {TYPE_CHECKER}.\n\nArguments:\n- $1: Specific path to check (optional, checks all code if not specified)\n\nUsage:\n- `/{COMMAND}` - Check all code\n- `/{COMMAND} {PATH_EXAMPLE}` - Check specific path\n\nThis will:\n1. Analyze type annotations\n2. Report type errors and inconsistencies\n3. Suggest type improvements\n4. Exit with non-zero code if errors found\n\nConfiguration: {TYPE_CHECKER_CONFIG_FILE}"
+      },
+      "examples": {
+        "python": "/{COMMAND} (uses mypy)",
+        "typescript": "/{COMMAND} (uses tsc --noEmit)"
+      }
+    },
+    "build": {
+      "names": ["build", "compile", "bundle"],
+      "template": {
+        "frontmatter": {
+          "description": "Build {FRAMEWORK} application for production",
+          "argument-hint": "[--mode MODE]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Create optimized production build of the {FRAMEWORK} application.\n\nArguments:\n- $1: Build mode (optional, defaults to production)\n\nUsage:\n- `/{COMMAND}` - Build for production\n- `/{COMMAND} --mode development` - Build for development\n\nThis will:\n1. Clean previous build artifacts\n2. Bundle and optimize code\n3. Generate production assets\n4. Create source maps (if configured)\n5. Output build statistics\n\nOutput directory: {BUILD_OUTPUT_DIR}\n\nAfter building, you can:\n- Test with `/{PREVIEW_COMMAND}` (if available)\n- Deploy to production\n- Analyze bundle size"
+      },
+      "examples": {
+        "react": "/{COMMAND}",
+        "django": "N/A (no build step)",
+        "flask": "N/A (no build step)"
+      }
+    },
+    "create_component": {
+      "names": ["create-component", "create-model", "create-blueprint", "create-app", "create-page"],
+      "template": {
+        "frontmatter": {
+          "description": "Generate new {COMPONENT_TYPE} with boilerplate code",
+          "argument-hint": "<name> [options]",
+          "allowed-tools": "Read(*), Write(*)"
+        },
+        "content": "Generate a new {COMPONENT_TYPE} with proper structure and boilerplate.\n\nArguments:\n- $1: Name of the {COMPONENT_TYPE} (required)\n- $2: Additional options (optional, e.g., --type, --path)\n\nUsage:\n- `/{COMMAND} {NAME_EXAMPLE}` - Create basic {COMPONENT_TYPE}\n- `/{COMMAND} {NAME_EXAMPLE} {OPTION_EXAMPLE}` - Create with options\n\nThis will:\n1. Validate the name format\n2. Check if {COMPONENT_TYPE} already exists\n3. Generate {FILE_TYPES} with boilerplate\n4. Add imports/exports where needed\n5. Display created files and next steps\n\nGenerated files:\n- {FILE_PATTERN}\n\nNaming conventions:\n- {NAMING_CONVENTION}\n\nAfter creation:\n- {POST_CREATION_STEPS}"
+      },
+      "examples": {
+        "react_component": "/{COMMAND} Button --type button",
+        "django_model": "/{COMMAND} <app> <model>",
+        "flask_blueprint": "/{COMMAND} <blueprint_name>",
+        "streamlit_page": "/{COMMAND} <page_name>"
+      }
+    },
+    "db_migrate": {
+      "names": ["migrate", "db-upgrade", "makemigrations", "db-migrate"],
+      "template": {
+        "frontmatter": {
+          "description": "{CREATE_OR_APPLY} database migrations",
+          "argument-hint": "[app_name] [message]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "{CREATE_OR_APPLY} database schema changes using {ORM}.\n\nArguments:\n- $1: {ARG1_DESCRIPTION}\n- $2: {ARG2_DESCRIPTION}\n\nUsage:\n- `/{COMMAND}` - {DEFAULT_BEHAVIOR}\n- `/{COMMAND} {ARG_EXAMPLE}` - {WITH_ARG_BEHAVIOR}\n\nThis will:\n1. {STEP_1}\n2. {STEP_2}\n3. {STEP_3}\n4. {STEP_4}\n\n{SAFETY_NOTE}\n\nBefore running migrations:\n- Review the migration files\n- Backup your database (production)\n- Test in development first\n\nAfter running migrations:\n- Verify schema changes\n- Test affected functionality"
+      },
+      "examples": {
+        "django_create": "/makemigrations [app_name]",
+        "django_apply": "/migrate [app_name]",
+        "flask": "/db-migrate \"<message>\"",
+        "flask_apply": "/db-upgrade"
+      }
+    },
+    "shell": {
+      "names": ["shell", "repl", "console"],
+      "template": {
+        "frontmatter": {
+          "description": "Open interactive {FRAMEWORK} shell/REPL",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Start an interactive {FRAMEWORK} shell with project context loaded.\n\nUsage:\n- `/{COMMAND}` - Start interactive shell\n\nThis will:\n1. Load {FRAMEWORK} configuration\n2. Import common modules\n3. Provide access to {AVAILABLE_OBJECTS}\n4. Start interactive REPL\n\nUseful for:\n- Testing code snippets\n- Inspecting database\n- Running quick experiments\n- Debugging\n\nPre-loaded:\n{PRELOADED_ITEMS}\n\nType `exit()` or press Ctrl+D to exit."
+      },
+      "examples": {
+        "django": "/shell",
+        "flask": "/shell",
+        "scrapy": "/shell"
+      }
+    },
+    "deploy": {
+      "names": ["deploy", "publish", "release"],
+      "template": {
+        "frontmatter": {
+          "description": "Deploy {FRAMEWORK} application to {PLATFORM}",
+          "argument-hint": "[environment]",
+          "allowed-tools": "Bash(*), Read(*)"
+        },
+        "content": "Deploy the {FRAMEWORK} application to {PLATFORM}.\n\nArguments:\n- $1: Target environment (optional, defaults to {DEFAULT_ENV})\n\nUsage:\n- `/{COMMAND}` - Deploy to {DEFAULT_ENV}\n- `/{COMMAND} {ENV_EXAMPLE}` - Deploy to specific environment\n\nThis will:\n1. Verify deployment prerequisites\n2. Run tests (if configured)\n3. Build production assets (if needed)\n4. Upload to {PLATFORM}\n5. Run post-deployment tasks\n6. Display deployment URL\n\nPrerequisites:\n{DEPLOYMENT_PREREQUISITES}\n\nEnvironment variables needed:\n{REQUIRED_ENV_VARS}\n\nAfter deployment:\n- Verify application is running\n- Check logs for errors\n- Run smoke tests"
+      },
+      "examples": {
+        "generic": "/{COMMAND} production",
+        "scrapy": "/{COMMAND}"
+      }
+    },
+    "install": {
+      "names": ["install", "add", "update"],
+      "template": {
+        "frontmatter": {
+          "description": "Install/update project dependencies",
+          "argument-hint": "[package_name]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Install or update project dependencies using {PACKAGE_MANAGER}.\n\nArguments:\n- $1: Specific package to install (optional, installs all if not specified)\n- $2: Version constraint (optional)\n\nUsage:\n- `/{COMMAND}` - Install all dependencies\n- `/{COMMAND} {PACKAGE_EXAMPLE}` - Install specific package\n- `/{COMMAND} {PACKAGE_EXAMPLE}@{VERSION}` - Install specific version\n\nThis will:\n1. Read {DEPENDENCY_FILE}\n2. Install packages with {PACKAGE_MANAGER}\n3. Update {LOCK_FILE}\n4. Display installation summary\n\nAfter installation:\n- Verify imports work\n- Update .gitignore if needed\n- Document new dependencies in README"
+      },
+      "examples": {
+        "python_pip": "/{COMMAND} (pip install -r requirements.txt)",
+        "python_uv": "/{COMMAND} (uv sync)",
+        "node": "/{COMMAND} (npm install)",
+        "node_add": "/{COMMAND} <package>"
+      }
+    },
+    "preview": {
+      "names": ["preview", "serve"],
+      "template": {
+        "frontmatter": {
+          "description": "Preview production build locally",
+          "argument-hint": "[--port PORT]",
+          "allowed-tools": "Bash(*)"
+        },
+        "content": "Start local server to preview production build.\n\nArguments:\n- $1: Port number (optional, defaults to {DEFAULT_PORT})\n\nUsage:\n- `/{COMMAND}` - Preview on default port\n- `/{COMMAND} 8080` - Preview on custom port\n\nThis will:\n1. Verify build exists (run /{BUILD_COMMAND} if needed)\n2. Start production server\n3. Serve optimized assets\n4. Display preview URL\n\nThis preview simulates production but:\n- Uses local server instead of production infrastructure\n- May not include production optimizations (CDN, etc.)\n- Useful for final testing before deployment\n\nPress Ctrl+C to stop the server."
+      },
+      "examples": {
+        "react": "/preview"
+      }
+    }
+  },
+  "notes": {
+    "usage": "To use these templates, replace placeholders like {FRAMEWORK}, {COMMAND}, {PORT} with actual values for your framework.",
+    "placeholders": [
+      "{FRAMEWORK} - Framework name (Django, React, Flask, etc.)",
+      "{COMMAND} - Actual command name",
+      "{PORT} or {DEFAULT_PORT} - Port number",
+      "{TEST_FRAMEWORK} - Testing framework (pytest, jest, etc.)",
+      "{LINTER} - Linting tool (black, eslint, etc.)",
+      "{FORMATTER} - Formatting tool",
+      "{TYPE_CHECKER} - Type checking tool (mypy, tsc, etc.)",
+      "{COMPONENT_TYPE} - Type of component (model, component, blueprint, etc.)",
+      "{NAME_EXAMPLE} - Example name for the component",
+      "{ORM} - ORM framework (SQLAlchemy, Django ORM, etc.)",
+      "{PLATFORM} - Deployment platform",
+      "{PACKAGE_MANAGER} - Package manager (pip, npm, yarn, etc.)"
+    ],
+    "customization": "Adapt the content to match your framework's conventions, tools, and best practices. Not all commands apply to all frameworks."
+  }
+}

@@ -1,0 +1,163 @@
+# Jupyter Notebook
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+**/.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data (too large for version control)
+data/raw/*
+data/processed/*
+data/interim/*
+data/external/*
+!data/.gitkeep
+!data/*/.gitkeep
+!data/README.md
+
+# Models (artifacts are too large)
+models/saved_models/*
+models/checkpoints/*
+models/model_registry/*
+!models/.gitkeep
+!models/*/.gitkeep
+!models/README.md
+*.pkl
+*.h5
+*.pt
+*.pth
+*.onnx
+*.pb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+*.py,cover
+.hypothesis/
+.tox/
+.nox/
+
+# MLflow
+mlruns/
+mlartifacts/
+experiments/mlruns/*
+!experiments/.gitkeep
+
+# Weights & Biases
+wandb/
+
+# Experiment outputs
+reports/figures/*
+!reports/.gitkeep
+!reports/figures/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.out
+
+# Profiling
+*.prof
+*.lprof
+
+# Distribution / packaging
+.Python
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

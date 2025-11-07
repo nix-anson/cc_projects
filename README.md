@@ -203,6 +203,32 @@ See `scrapy-template/README.md` for detailed usage instructions.
 
 ---
 
+### Jupyter ML Template
+
+**Location**: `jupyter-ml-template/`
+
+A production-ready Jupyter ML template featuring:
+- Python 3.13+ with uv package manager for lightning-fast dependency management
+- Complete ML stack: pandas, numpy, scikit-learn, PyTorch, TensorFlow, XGBoost, LightGBM, CatBoost
+- Advanced visualization: matplotlib, seaborn, plotly for publication-quality and interactive plots
+- MLflow for comprehensive experiment tracking, model versioning, and model registry
+- Data validation with Great Expectations and Pandera for data quality assurance
+- JupyterLab with productivity extensions (LSP, git integration, resource monitoring)
+- Structured workflow with separate directories for EDA, preprocessing, feature engineering, modeling, and evaluation
+- Production-ready source code in `src/` with reusable modules for data loading, preprocessing, model training, and visualization
+- Code quality tools: black, ruff, mypy, pytest with notebook testing support
+- 12 custom slash commands (/start-jupyter, /run-notebook, /train-model, /evaluate-model, /track-experiment, etc.)
+- 6 specialized agents (eda-specialist, feature-engineer, model-optimizer, ml-debugger, experiment-tracker, notebook-reviewer)
+- 4 skills for ML pipelines, notebook templates, data validation, and model deployment
+- Comprehensive documentation covering ML best practices, reproducibility guidelines, and workflow patterns
+- Notebook templates for quick-start EDA, modeling, evaluation, and reporting
+
+**Best For**: Machine learning projects, data science workflows, model experimentation, ML research, predictive analytics
+
+See `jupyter-ml-template/README.md` for detailed usage instructions.
+
+---
+
 *More templates coming soon! Check back for Node/Express, Vue.js, Next.js, and other frameworks.*
 
 ## Template Structure

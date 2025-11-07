@@ -1,0 +1,132 @@
+[project]
+name = "jupyter-ml-template"
+version = "0.1.0"
+description = "Production-ready Jupyter ML template for data science and machine learning workflows"
+requires-python = ">=3.13"
+readme = "README.md"
+license = { text = "MIT" }
+
+dependencies = [
+    # Core ML stack
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "scikit-learn>=1.4.0",
+
+    # Deep Learning frameworks
+    "torch>=2.2.0",
+    "tensorflow>=2.15.0",
+
+    # Visualization libraries
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    "plotly>=5.18.0",
+
+    # Advanced ML libraries
+    "xgboost>=2.0.0",
+    "lightgbm>=4.3.0",
+    "catboost>=1.2.0",
+
+    # Jupyter ecosystem
+    "jupyterlab>=4.1.0",
+    "ipywidgets>=8.1.0",
+    "ipykernel>=6.29.0",
+
+    # MLOps and experiment tracking
+    "mlflow>=2.10.0",
+
+    # Data validation
+    "great-expectations>=0.18.0",
+    "pandera>=0.18.0",
+
+    # Utilities
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+    "joblib>=1.3.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    # Code quality
+    "black>=24.0.0",
+    "ruff>=0.2.0",
+    "mypy>=1.8.0",
+
+    # Testing
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "nbval>=0.10.0",
+
+    # Profiling
+    "memory-profiler>=0.61.0",
+    "line-profiler>=4.1.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]  # unused imports in __init__.py
+"notebooks/*.ipynb" = ["E402", "F401"]  # imports not at top, unused imports
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+follow_imports = "normal"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--cov=src",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

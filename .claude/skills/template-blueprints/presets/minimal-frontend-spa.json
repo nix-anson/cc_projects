@@ -1,0 +1,111 @@
+{
+  "preset_name": "minimal-frontend-spa",
+  "description": "Minimal single-page application frontend starter",
+  "template_type": "frontend-spa",
+  "depth": "minimal",
+  "recommended_frameworks": [
+    "React + Vite",
+    "Vue.js",
+    "Svelte"
+  ],
+  "commands": [
+    {
+      "name": "dev",
+      "description": "Run development server",
+      "priority": "essential"
+    },
+    {
+      "name": "build",
+      "description": "Build for production",
+      "priority": "essential"
+    },
+    {
+      "name": "test",
+      "description": "Run test suite",
+      "priority": "essential"
+    },
+    {
+      "name": "lint",
+      "description": "Check code quality",
+      "priority": "essential"
+    },
+    {
+      "name": "format",
+      "description": "Auto-format code",
+      "priority": "essential"
+    },
+    {
+      "name": "create-component",
+      "description": "Generate new component",
+      "priority": "essential"
+    }
+  ],
+  "agents": [
+    {
+      "name": "security",
+      "role": "Review for XSS, auth issues, and security vulnerabilities",
+      "priority": "required"
+    },
+    {
+      "name": "framework-expert",
+      "role": "Framework-specific best practices and patterns",
+      "priority": "required"
+    },
+    {
+      "name": "test-helper",
+      "role": "Generate component tests",
+      "priority": "required"
+    }
+  ],
+  "skills": [
+    {
+      "name": "component-patterns",
+      "description": "Common component design patterns"
+    },
+    {
+      "name": "state-basics",
+      "description": "Basic state management patterns"
+    }
+  ],
+  "features": {
+    "routing": true,
+    "state_management": "basic",
+    "api_integration": true,
+    "styling": "css-modules",
+    "typescript": true
+  },
+  "suggested_dependencies": {
+    "react": [
+      "React 18",
+      "Vite",
+      "TypeScript",
+      "React Router",
+      "Vitest",
+      "ESLint",
+      "Prettier"
+    ],
+    "vue": [
+      "Vue 3",
+      "Vite",
+      "TypeScript",
+      "Vue Router",
+      "Vitest",
+      "ESLint",
+      "Prettier"
+    ]
+  },
+  "estimated_files": {
+    "commands": 6,
+    "agents": 3,
+    "skills": 2,
+    "total_config_files": "~18"
+  },
+  "complexity": "low",
+  "setup_time": "15-30 minutes",
+  "ideal_for": [
+    "Learning frontend development",
+    "Small web apps",
+    "Admin dashboards",
+    "Prototypes"
+  ]
+}

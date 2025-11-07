@@ -1,0 +1,156 @@
+{
+  "preset_name": "data-pipeline",
+  "description": "Data processing, scraping, or analytics pipeline template",
+  "template_type": "data-pipeline",
+  "depth": "standard",
+  "recommended_frameworks": [
+    "Scrapy",
+    "Streamlit",
+    "Airflow"
+  ],
+  "commands": [
+    {
+      "name": "run",
+      "description": "Run the data pipeline/application",
+      "priority": "essential"
+    },
+    {
+      "name": "test",
+      "description": "Run test suite",
+      "priority": "essential"
+    },
+    {
+      "name": "lint",
+      "description": "Check code quality",
+      "priority": "essential"
+    },
+    {
+      "name": "format",
+      "description": "Auto-format code",
+      "priority": "essential"
+    },
+    {
+      "name": "type-check",
+      "description": "Run type checker",
+      "priority": "essential"
+    },
+    {
+      "name": "db-migrate",
+      "description": "Create database migrations",
+      "priority": "standard"
+    },
+    {
+      "name": "db-upgrade",
+      "description": "Apply database migrations",
+      "priority": "standard"
+    },
+    {
+      "name": "create-pipeline",
+      "description": "Generate new data pipeline",
+      "priority": "standard"
+    },
+    {
+      "name": "validate-data",
+      "description": "Validate data quality",
+      "priority": "standard"
+    },
+    {
+      "name": "export-data",
+      "description": "Export data to various formats",
+      "priority": "standard"
+    }
+  ],
+  "agents": [
+    {
+      "name": "security",
+      "role": "Review for data security and privacy issues",
+      "priority": "required"
+    },
+    {
+      "name": "data-expert",
+      "role": "Data pipeline best practices",
+      "priority": "required"
+    },
+    {
+      "name": "test-generator",
+      "role": "Generate data validation tests",
+      "priority": "required"
+    },
+    {
+      "name": "performance-tuner",
+      "role": "Optimize data processing performance",
+      "priority": "required"
+    },
+    {
+      "name": "database-architect",
+      "role": "Design data storage schemas",
+      "priority": "required"
+    }
+  ],
+  "skills": [
+    {
+      "name": "pipeline-patterns",
+      "description": "Common data pipeline patterns"
+    },
+    {
+      "name": "data-generator",
+      "description": "Generate data processing code"
+    },
+    {
+      "name": "validation-patterns",
+      "description": "Data validation and quality checks"
+    },
+    {
+      "name": "storage-patterns",
+      "description": "Data storage and export patterns"
+    }
+  ],
+  "features": {
+    "data_collection": true,
+    "data_transformation": true,
+    "data_validation": true,
+    "data_storage": true,
+    "scheduling": true,
+    "monitoring": true,
+    "export_formats": true
+  },
+  "suggested_dependencies": {
+    "scrapy": [
+      "Scrapy 2.11+",
+      "Playwright",
+      "PostgreSQL/MongoDB",
+      "Redis",
+      "Docker",
+      "pytest"
+    ],
+    "streamlit": [
+      "Streamlit 1.51+",
+      "Pandas",
+      "SQLAlchemy",
+      "Plotly/Altair",
+      "pytest"
+    ],
+    "airflow": [
+      "Apache Airflow",
+      "Pandas",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "pytest"
+    ]
+  },
+  "estimated_files": {
+    "commands": 10,
+    "agents": 5,
+    "skills": 4,
+    "total_config_files": "~38"
+  },
+  "complexity": "medium",
+  "setup_time": "45 minutes - 1.5 hours",
+  "ideal_for": [
+    "Web scraping projects",
+    "Data dashboards",
+    "ETL pipelines",
+    "Analytics applications",
+    "Data collection systems"
+  ]
+}
