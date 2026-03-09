@@ -15,8 +15,8 @@
   },
   "permissions": {
     "deny": {
-      "read": [".env", "*.key", "*.pem", "secrets.*", "*.secret"],
-      "write": [".env", "*.key", "*.pem", "secrets.*", "*.secret"]
+      "read": [".env", "*.key", "*.pem", "Secrets.*", "*.secret"],
+      "write": [".env", "*.key", "*.pem", "Secrets.*", "*.secret"]
     }
   }
 }

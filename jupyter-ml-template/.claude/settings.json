@@ -12,7 +12,7 @@
       ".env",
       "*.key",
       "*.pem",
-      "secrets.*",
+      "Secrets.*",
       "credentials.*",
       "data/raw/*",
       "data/processed/*",
