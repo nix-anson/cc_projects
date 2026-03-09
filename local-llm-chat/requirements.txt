@@ -1,0 +1,26 @@
+# FastAPI serving layer
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+websockets==13.1
+pydantic-settings==2.6.0
+python-dotenv==1.0.1
+
+# HuggingFace ecosystem
+transformers>=4.44.0
+peft>=0.13.0
+accelerate>=0.34.0
+datasets>=3.0.0
+huggingface_hub>=0.25.0
+tokenizers>=0.20.0
+trl>=0.11.0
+
+# Quantization (QLoRA 4-bit)
+bitsandbytes>=0.44.0
+
+# PyTorch — install separately with CUDA variant:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+torch>=2.4.0
+
+# Model weights / serialization
+safetensors>=0.4.5
+tqdm>=4.66.0

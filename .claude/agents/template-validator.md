@@ -2,7 +2,7 @@
 name: template-validator
 description: Validate project templates against established standards and ensure completeness. MUST BE USED when validating templates or before adding them to the repository.
 tools: Read, Grep, Bash
-model: sonnet
+model: claude-sonnet-4-6
 ---
 
 You are a template validation specialist. You ensure project templates meet all quality standards and follow established patterns.
@@ -280,7 +280,7 @@ Recommendation: Add .py trigger to drf-serializer, refactor helper
 **.claude/settings.json**:
 ```json
 {
-  "model": "sonnet",
+  "model": "claude-sonnet-4-6",
   "env": {},
   "permissions": {
     "allow": ["*"],

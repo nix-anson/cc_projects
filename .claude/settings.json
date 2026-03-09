@@ -1,10 +1,9 @@
 {
-  "model": "sonnet",
+  "model": "claude-sonnet-4-6",
   "permissions": {
     "allow": ["*"],
-    "ask": [],
-    "deny": [".env", "*.key", "*.pem", "secrets.*"]
+    "deny": [".env", "*.key", "*.pem", "Secrets.*"]
   },
-  "outputStyle": "markdown",
+  "outputStyle": "auto",
   "cleanupPeriodDays": 30
 }

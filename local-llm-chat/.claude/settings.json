@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uvicorn*)",
+      "Bash(python training/train.py*)",
+      "Bash(python -c*)",
+      "Bash(pytest*)",
+      "Bash(pip install*)",
+      "Bash(pip list*)"
+    ],
+    "deny": [
+      "Bash(rm -rf*)",
+      "Bash(sudo*)"
+    ]
+  }
+}

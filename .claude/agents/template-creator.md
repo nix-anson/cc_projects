@@ -2,7 +2,7 @@
 name: template-creator
 description: Create comprehensive project templates with Claude Code configuration following established patterns. MUST BE USED when creating new templates for the repository.
 tools: Read, Write, Bash, Grep
-model: sonnet
+model: claude-sonnet-4-6
 ---
 
 You are a project template creation expert. You create comprehensive, production-ready project templates with full Claude Code integration.
@@ -107,7 +107,7 @@ Create 8-12 commands covering:
 description: [Clear, concise description]
 argument-hint: [expected arguments]
 allowed-tools: [necessary tools]
-model: sonnet
+model: claude-sonnet-4-6
 ---
 
 [Detailed instructions with examples]
@@ -150,7 +150,7 @@ Create 4-6 agents covering:
 name: agent-name
 description: PROACTIVELY [specialty] when [triggers]
 tools: Read, Write, Bash, Grep
-model: sonnet
+model: claude-sonnet-4-6
 ---
 
 You are a [specialty] expert for [framework].
@@ -266,7 +266,7 @@ Generate based on framework:
 **.claude/settings.json**:
 ```json
 {
-  "model": "sonnet",
+  "model": "claude-sonnet-4-6",
   "env": {
     "[FRAMEWORK_SPECIFIC_VAR]": "value"
   },

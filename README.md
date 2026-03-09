@@ -229,6 +229,30 @@ See `jupyter-ml-template/README.md` for detailed usage instructions.
 
 ---
 
+### Django + Scrapy Political Tracker Template
+
+**Location**: `django-scrapy-template/`
+
+A production-ready template for building data-tracking websites that combine Django's admin/ORM with Scrapy's spider engine. Pre-configured for political data tracking but adaptable to any domain.
+
+- Django 5.1 + Scrapy 2.11 integrated via management command (`run_spider`)
+- Django REST Framework with filtering, search, and auto-generated OpenAPI docs
+- 7 tracker models: Politician, Vote, Decision, AffectedGroup, FundingRecord, Source + through model
+- 4 example spiders: Congress.gov API (members + votes), OpenSecrets, VoteSmart, Wikipedia bio enrichment
+- Celery + Redis for scheduled spider runs with django-celery-beat
+- PostgreSQL with full-text search (`SearchVectorField` + `GinIndex`)
+- factory-boy test factories, pipeline tests, and comprehensive API tests
+- Docker + docker-compose with healthcheck-gated Celery services
+- 11 custom slash commands (/spider-run, /migrate, /api-docs, /scrape-schedule, /data-export, etc.)
+- 5 specialized agents (Django-Scrapy expert, data modeler, spider builder, ORM optimizer, test writer)
+- 3 skills for pipeline patterns, data model design, and API filter building
+
+**Best For**: Political trackers, government data scrapers, research data pipelines, any project combining web scraping with a REST API and admin interface
+
+See `django-scrapy-template/README.md` for detailed usage instructions.
+
+---
+
 ### Quart Async Web Application Template
 
 **Location**: `quart-template/`

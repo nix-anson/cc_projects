@@ -1,0 +1,42 @@
+# QLoRA fine-tuning config for Meta Llama 3.1-8B-Instruct
+# Requires ~10GB VRAM with 4-bit quantization.
+# Requires HF_TOKEN — request access at: https://huggingface.co/meta-llama
+
+base_model_id: "meta-llama/Llama-3.1-8B-Instruct"
+hf_token: ""  # Required — set HF_TOKEN env var or paste here
+
+# Dataset
+dataset_name: "timdettmers/openassistant-guanaco"
+dataset_split: "train"
+text_column: "text"
+max_seq_length: 2048
+
+# Output
+output_dir: "models/adapters/llama31-qlora"
+logging_dir: "logs/llama31-qlora"
+
+# Training
+num_train_epochs: 2
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+warmup_ratio: 0.03
+lr_scheduler_type: "cosine"
+save_steps: 200
+logging_steps: 20
+fp16: false
+bf16: true
+
+lora:
+  r: 64
+  lora_alpha: 128
+  lora_dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"

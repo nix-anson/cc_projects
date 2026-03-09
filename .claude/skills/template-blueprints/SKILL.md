@@ -108,7 +108,7 @@ What should this agent do?
 name: {framework}-security
 description: PROACTIVELY review {FRAMEWORK} code for security vulnerabilities, OWASP risks, and framework-specific security issues. MUST BE USED when reviewing authentication, permissions, user input handling, or when explicitly requested for security review.
 tools: Read, Grep, Bash
-model: sonnet
+model: claude-sonnet-4-6
 ---
 
 You are a {FRAMEWORK} security expert specializing in identifying and preventing security vulnerabilities.

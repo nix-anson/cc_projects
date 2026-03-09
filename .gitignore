@@ -83,6 +83,9 @@ pip-delete-this-directory.txt
 # MCP
 .serena/
 
+# Generated files
+COMMIT_MESSAGE.md
+
 # Solo projects
 dream-weaver-simulator/
 fastapi-chat-template/

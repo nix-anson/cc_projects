@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment
+.env
+
+# Models & data — large binary files
+models/
+data/
+
+# Logs
+logs/
+*.log
+wandb/
+runs/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ruff / black
+.ruff_cache/

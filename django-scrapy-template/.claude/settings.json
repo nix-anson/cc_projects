@@ -1,0 +1,40 @@
+{
+  "model": "claude-sonnet-4-6",
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "config.settings.development",
+    "SCRAPY_SETTINGS_MODULE": "scrapy_spiders.settings"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(uv run python manage.py *)",
+      "Bash(uv run pytest*)",
+      "Bash(uv run black*)",
+      "Bash(uv run isort*)",
+      "Bash(uv run flake8*)",
+      "Bash(uv run celery*)",
+      "Bash(docker-compose*)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ],
+    "deny": [
+      ".env",
+      "*.key",
+      "*.pem",
+      "secrets.*"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo $FILE | grep -E '\\.py$'; then uv run black $FILE 2>/dev/null || true; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
